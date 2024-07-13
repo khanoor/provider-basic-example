@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:provider_boiler_plate/provider/another_one.dart';
+import 'package:provider_boiler_plate/provider/auth_provider.dart';
 import 'package:provider_boiler_plate/provider/count_provider.dart';
 import 'package:provider_boiler_plate/provider/favourite_provider.dart';
 import 'package:provider_boiler_plate/provider/them_provider.dart';
@@ -21,6 +22,7 @@ class MyApp extends StatelessWidget {
           ChangeNotifierProvider(create: (_) => AnotherOneProvider()),
           ChangeNotifierProvider(create: (_) => FavouriteProvider()),
           ChangeNotifierProvider(create: (_) => ThemeChangerProvider()),
+          ChangeNotifierProvider(create: (_) => AuthProvider()),
         ],
         child: Builder(builder: (BuildContext context) {
           final themeChange = Provider.of<ThemeChangerProvider>(context);

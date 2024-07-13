@@ -4,6 +4,8 @@ import 'package:provider_boiler_plate/screens/another_one.dart';
 import 'package:provider_boiler_plate/screens/count_example.dart';
 import 'package:provider_boiler_plate/screens/dart_theme_screen.dart';
 import 'package:provider_boiler_plate/screens/favourite/favourite_screen.dart';
+import 'package:provider_boiler_plate/screens/login_screen.dart';
+import 'package:provider_boiler_plate/screens/value_noti.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -22,13 +24,16 @@ class _HomeScreenState extends State<HomeScreen> {
       body: Center(
         child: Column(
           children: [
-            CustomeButton(
-                title: 'Count Example', screenName: const CountExample()),
-            CustomeButton(title: 'Another One', screenName: const AnotherOne()),
-            CustomeButton(
-                title: 'Favourite Items', screenName: const FavouriteScreen()),
-            CustomeButton(
-                title: 'Change Theme', screenName: const DartThemeScreen()),
+            const CustomeButton(
+                title: 'Count Example', screenName: CountExample()),
+            const CustomeButton(title: 'Another One', screenName: AnotherOne()),
+            const CustomeButton(
+                title: 'Favourite Items', screenName: FavouriteScreen()),
+            const CustomeButton(
+                title: 'Change Theme', screenName: DartThemeScreen()),
+            CustomeButton(title: 'Value Notifier', screenName: ValueNoti()),
+            const CustomeButton(
+                title: 'Login', screenName: LoginScreen()),
           ],
         ),
       ),
@@ -37,10 +42,9 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class CustomeButton extends StatelessWidget {
-  String title;
-
-  Widget screenName;
-  CustomeButton({
+  final String title;
+  final Widget screenName;
+  const CustomeButton({
     super.key,
     required this.title,
     required this.screenName,
